@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FFStore - Jual Beli Akun Free Fire</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav>
+        <div class="container">
+            <div class="logo">HANZZ<span>STORE</span></div>
+            <ul>
+                <li><a href="#" onclick="showPage('home')">MARKET</a></li> 
+                <li id="nav-sell-account"><a href="#" onclick="showPage('jual')" class="nav-cta">SELL ACCOUNT</a></li>
+                <li id="nav-register"><a href="#" onclick="showPage('register')" class="nav-cta" style="background: transparent; color: white !important; border: 1px solid white;">REGISTER</a></li>
+                <li id="nav-auth-link"><a href="#" onclick="showPage('login')" class="nav-cta">LOGIN</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section id="home-page">
+        <header>
+            <div class="container">
+                <div class="hero-label">PREMIUM MARKETPLACE</div>
+                <h1>LEVEL UP YOUR <span class="highlight">GAME.</span></h1>
+                <p class="hero-sub">Platform perdagangan akun Free Fire paling aman dan terpercaya di industri.</p>
+                <div class="filter-container">
+                    <button class="filter-btn active" data-filter="all">ALL ITEMS</button>
+                    <button class="filter-btn" data-filter="FreeFire">ELITE ACCOUNTS</button>
+                    <button class="filter-btn" data-filter="Promo">LIMITED OFFERS</button>
+                </div>
+            </div>
+        </header>
+        <main class="container">
+            <div class="product-grid" id="productGrid"></div>
+        </main>
+    </section>
+
+    <section id="jual-page" style="display: none;">
+        <div class="container">
+            <div id="jual-logged-out" class="form-box" style="text-align: center; display: none;">
+                <div class="hero-label">PREMIUM ACCESS</div>
+                <h2>LOGIN UNTUK JUAL AKUN</h2>
+                <p class="hero-sub">Daftar atau Login sekarang untuk mulai menjual aset digital Anda di platform kami.</p>
+                <button class="submit-btn" onclick="showPage('login')">LOGIN SEKARANG</button>
+            </div>
+            <div id="jual-logged-in" class="form-box" style="display: none;">
+                <h2>LIST YOUR ACCOUNT</h2>
+                <form id="formJual">
+                    <div class="form-group">
+                        <label>Judul Iklan</label>
+                        <input type="text" id="judul" placeholder="Contoh: Akun Old S1" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Kategori</label>
+                        <select id="kategori">
+                            <option value="FreeFire">Akun Sultan</option>
+                            <option value="Promo">Promo Murah</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Keterangan Akun</label>
+                        <input type="text" id="keterangan" placeholder="Contoh: Full Skin, SG OPM, Old S1" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Via Login</label>
+                        <input type="text" id="loginVia" placeholder="Contoh: Facebook / Google / VK" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Harga (Rp)</label>
+                        <input type="number" id="harga" placeholder="Masukkan nominal harga" required>
+                    </div>
+                    <button type="submit" class="submit-btn">PUBLISH LISTING</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section id="login-page" style="display: none;">
+        <div class="container">
+            <div class="form-box">
+                <h2>LOGIN TO MANAGE</h2>
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label>USERNAME</label>
+                        <input type="text" id="loginUsername" placeholder="Enter your username" required>
+                    </div>
+                    <div class="form-group">
+                        <label>PASSWORD</label>
+                        <input type="password" id="loginPassword" placeholder="Enter your password" required>
+                    </div>
+                    <button type="submit" class="submit-btn">LOGIN</button>
+                    <p id="login-error" style="color: red; text-align: center; margin-top: 20px;" class="hidden">Invalid username or password.</p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section id="register-page" style="display: none;">
+        <div class="container">
+            <div class="form-box">
+                <h2>CREATE NEW ACCOUNT</h2>
+                <form id="registerForm">
+                    <div class="form-group">
+                        <label>CHOOSE USERNAME</label>
+                        <input type="text" id="regUsername" placeholder="Min. 4 characters" required>
+                    </div>
+                    <div class="form-group">
+                        <label>CREATE PASSWORD</label>
+                        <input type="password" id="regPassword" placeholder="Enter secure password" required>
+                    </div>
+                    <button type="submit" class="submit-btn">REGISTER ACCOUNT</button>
+                    <p id="reg-msg" style="text-align: center; margin-top: 20px;" class="hidden"></p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
